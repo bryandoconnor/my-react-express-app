@@ -16,11 +16,10 @@ export const store = createStore(
 				case mutations.REQUEST_AUTHENTICATE_USER:
 					return {...userSession, authenticated: mutations.AUTHENTICATING};
 				case mutations.PROCESSING_AUTHENTICATE_USER:
-					return {userSession, authenticated};
+					return {...userSession, authenticated};
 				default:
 					return userSession;
 			}
-			return session;
 		},
 		tasks(tasks = defaultState.tasks, action) {
 			switch (action.type) {
